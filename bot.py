@@ -2,6 +2,7 @@ import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction, SlashOption
 import random
+import os  # Token için gerekli
 
 intents = nextcord.Intents.default()
 intents.message_content = True
@@ -140,4 +141,5 @@ async def yardim(interaction: Interaction):
     await interaction.response.send_message(embed=embed)
 
 # ------------------- BOTU ÇALIŞTIR -------------------
-bot.run("MTM3MzI5MTMyNjA2NTYxMDgxMg.GGhLf7.SQ27eMNAeGouiKPf-P7gSq6sYRU1ghgHS2BhO4")
+# Token artık env değişkeni ile okunuyor
+bot.run(os.environ['DISCORD_TOKEN'])
